@@ -26,7 +26,7 @@ This project is a movie recommendation system built using Flask for the backend 
 - Flask
 - Pandas
 
-##Usage
+## Usage
 - On the main page (/), enter a movie name and click "Get Recommendations."
 - The system will display a list of recommended movies based on the input movie.
 
