@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <style>
+        body {
+            background-image: url('https://th.bing.com/th/id/OIP.rGt4LcTn5dbjhjJWN00mtAHaEK?rs=1&pid=ImgDetMain');
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Fixed background */
+            color: white; /* Ensures text is readable on dark backgrounds */
+            font-family: 'Open Sans', sans-serif; /* Main font for body */
+            padding: 20px; /* Adds some padding to the body */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5em;
+            font-family: 'Roboto', sans-serif; /* Different font for heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow to make the text stand out */
+            transition: color 0.3s, text-shadow 0.3s; /* Smooth transition */
+        }
+
+        h1:hover {
+            color: #FFD700; /* Change text color on hover */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1); /* Increase shadow on hover */
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.8em; /* Slightly larger for emphasis */
+        }
+
+        ol {
+            margin: 0 auto;
+            max-width: 300px;
+            padding-left: 0; /* Remove default padding */
+            list-style-type: none; /* Remove default list style */
+            text-align: left; /* Align text to the left */
+            margin-top: 20px; /* Space above the list */
+        }
+
+        li {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for each item */
+            margin: 10px 0; /* Space between items */
+            padding: 15px; /* Padding for better spacing */
+            border-radius: 5px; /* Rounded corners */
+            transition: transform 0.3s, background-color 0.3s; /* Smooth transition effect */
+        }
+
+        li:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            background-color: rgba(255, 255, 255, 0.1); /* Change background color on hover */
+            color: #FFD700; /* Change text color on hover */
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #008CBA;
+            text-decoration: none;
+            font-size: 1.2em; /* Increase font size for link */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Smaller font size on small screens */
+            }
+
+            h3 {
+                font-size: 1.5em; /* Adjusted size for h3 */
+            }
+
+            ol {
+                max-width: 90%; /* Use more width for smaller screens */
+            }
+
+            li {
+                padding: 10px; /* Adjust padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommendations for {{ movie_data['title'] }}</h1>
+    
+    <h3>Recommended Movies:</h3>
+    <ol>
+        <li>{{ movie_data['FirstMovieRecommendation'] }}</li>
+        <li>{{ movie_data['SecondMovieRecommendation'] }}</li>
+        <li>{{ movie_data['ThirdMovieRecommendation'] }}</li>
+        <li>{{ movie_data['FourthMovieRecommendation'] }}</li>
+    </ol>
+
+    <a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>
